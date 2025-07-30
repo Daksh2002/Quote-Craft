@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+  background: linear-gradient(120deg, #f5f6fa 0%, #dff9fb 100%);
+  min-height: 100vh;
+  color: #333;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.3s, color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.main-content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1, .lead, .btn {
+  color: #333;
+}
+
+.quote-card, .quote-box {
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: background 0.3s, color 0.3s;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quote-text, .blockquote {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #222;
+}
+
+.quote-author, .blockquote-footer {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.fade-in {
+  animation: fadeIn 0.7s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background: linear-gradient(120deg, #232526 0%, #414345 100%);
+  color: #e0e0e0;
+}
+
+body.dark-mode .quote-card,
+body.dark-mode .quote-box {
+  background: #232526;
+  color: #e0e0e0;
+}
+
+body.dark-mode .gradient-text {
+  background: linear-gradient(90deg, #f7971e, #ffd200);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.dark-mode .blockquote,
+body.dark-mode .quote-text {
+  color: #f1c40f;
+}
+
+body.dark-mode .blockquote-footer,
+body.dark-mode .quote-author {
+  color: #b2bec3;
+}
+
+/* Dark Mode Toggle Switch */
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 50px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.footer {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  font-size: 0.85rem;
+  color: #999;
+  z-index: 1000;
+}
+
+body.dark-mode .footer {
+  color: #bbb;
+}
